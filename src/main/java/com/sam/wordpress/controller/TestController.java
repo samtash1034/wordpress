@@ -1,16 +1,15 @@
 package com.sam.wordpress.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller
+import org.springframework.web.bind.annotation.*;
+
+@RestController
 public class TestController {
+    @GetMapping("/test")//記得改成 PostMapping
+    public String test(@RequestHeader(required = false) String name){
 
-    //發起一個 http request http://localhost:8080/index(url)
-    @RequestMapping ("/index")
-    public String index(){
+        System.out.println("header 參數 name 的值為：" + name);
 
-        return "index";//跳轉到 index.html
+        return "成功取得 request header 裡面的參數";
     }
-
 }

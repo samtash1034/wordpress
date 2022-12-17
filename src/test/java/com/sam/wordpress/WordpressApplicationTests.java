@@ -8,6 +8,7 @@ class WordpressApplicationTests {
 
     @Test
     void contextLoads() {
+
     }
 
 }
